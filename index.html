@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Proxy mduyk~</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: radial-gradient(circle at center, #020617, #000);
+    color: white;
+    overflow: hidden;
+}
+
+/* NGÂN HÀ XOAY */
+.galaxy {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(white 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: rotateGalaxy 60s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes rotateGalaxy {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* KHUNG */
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* TITLE */
+h2 {
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* BOX */
+.box {
+    background: #1e293b;
+    padding: 20px;
+    width: 170px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.box:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 0 20px rgba(34,197,94,0.6);
+}
+
+/* GIÁ */
+.box p {
+    font-size: 18px;
+    color: #4ade80;
+    font-weight: bold;
+}
+
+/* BUTTON */
+button {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+</style>
+</head>
+
+<body>
+
+<div class="galaxy"></div>
+
+<div class="container">
+    <h2>🛒 Shop Proxy mduyk~</h2>
+
+    <div class="grid">
+        <div class="box">
+            <h3>Proxy Ngày</h3>
+            <p>10.000đ</p>
+            <button onclick="buy('Proxy Ngày')">Mua ngay</button>
+        </div>
+
+        <div class="box">
+            <h3>Proxy Tuần</h3>
+            <p>40.000đ</p>
+            <button onclick="buy('Proxy Tuần')">Mua ngay</button>
+        </div>
+
+        <div class="box">
+            <h3>Proxy Tháng</h3>
+            <p>60.000đ</p>
+            <button onclick="buy('Proxy Tháng')">Mua ngay</button>
+        </div>
+
+        <div class="box">
+            <h3>Proxy Vĩnh viễn</h3>
+            <p>300.000đ</p>
+            <button onclick="buy('Proxy Vĩnh viễn')">Mua ngay</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// CHUYỂN TRANG
+function buy(name) {
+    window.location.href = "pay.html?goi=" + encodeURIComponent(name);
+}
+</script>
+
+</body>
+</html>
