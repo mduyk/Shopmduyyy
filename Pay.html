@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Thanh toán</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background: linear-gradient(-45deg, #020617, #0f172a, #1e293b, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color: white;
+    margin: 0;
+}
+
+/* ANIMATION NỀN */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* KHUNG CỐ ĐỊNH */
+.box {
+    background: #1e293b;
+    padding: 20px;
+    width: 320px;
+    border-radius: 10px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    margin-top: 15px;
+    background: #22c55e;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Thông tin thanh toán</h2>
+
+    <p><b>STK:</b> 0588807300000</p>
+    <p><b>Chủ TK:</b> Cao Minh Duy</p>
+
+    <p><b>Nội dung CK:</b> <span id="noidung"></span></p>
+
+    <p style="color: yellow; font-weight: bold;">
+        ⚠️ Quan trọng: Khi nhập nội dung chuyển khoản vui lòng nhập kèm số điện thoại của bạn
+    </p>
+
+    <button onclick="paid()">Tôi đã thanh toán</button>
+</div>
+
+<script>
+// TẠO NỘI DUNG NGẪU NHIÊN
+function generateContent() {
+    let randomNumber = Math.floor(100000 + Math.random() * 900000);
+    return "MDUYK" + randomNumber;
+}
+
+document.getElementById("noidung").innerText = generateContent();
+
+function paid() {
+    alert("Nếu bạn gặp vấn đề khi quên ghi số điện thoại vui lòng liên hệ admin: 0328033706");
+}
+</script>
+
+</body>
+</html>
